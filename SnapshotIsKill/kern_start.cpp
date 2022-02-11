@@ -97,7 +97,7 @@ PluginConfiguration ADDPR(config) {
                 KernelPatcher::RouteRequest("_vfs_switch_root", wrapVfsSwitchRoot, orgVfsSwitchRoot)
             };
             
-            if (!patcher.routeMultipleLong(KernelPatcher::KernelID, requests, 2)) { PANIC("sskill", "failed to route"); };
+            if (!patcher.routeMultipleLong(KernelPatcher::KernelID, requests, arrsize(requests))) { PANIC("sskill", "failed to route"); };
         });
     }
 };
